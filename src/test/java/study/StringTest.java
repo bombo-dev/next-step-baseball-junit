@@ -13,11 +13,18 @@ public class StringTest {
     }
 
     @Test
-    @DisplayName("split")
+    @DisplayName("split()")
     void split() {
         String actual = "1,2";
         String[] result = actual.split(",");
         assertThat(result).contains("1", "2");
         assertThat(result).containsExactly("1", "2");
+    }
+
+    @Test
+    @DisplayName("substring()")
+    void substring() {
+        String actual = "(1,2)";
+        assertThat(actual.substring(1, actual.length() - 1)).isEqualTo("1,2");
     }
 }
