@@ -1,5 +1,6 @@
 package study;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -9,5 +10,14 @@ public class StringTest {
     void replace() {
         String actual = "abc".replace("b", "d");
         assertThat(actual).isEqualTo("adc");
+    }
+
+    @Test
+    @DisplayName("split")
+    void split() {
+        String actual = "1,2";
+        String[] result = actual.split(",");
+        assertThat(result).contains("1", "2");
+        assertThat(result).containsExactly("1", "2");
     }
 }
