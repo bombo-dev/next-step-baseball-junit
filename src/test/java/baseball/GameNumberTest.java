@@ -15,10 +15,7 @@ class GameNumberTest {
     @DisplayName("100 ~ 999 난수 생성")
     void createRandomValue() {
         for(int i = 0; i < 2000; i++) {
-            GameNumber number = new GameNumber();
-            assertThatCode(() -> {
-                number.validNumber();
-            }).doesNotThrowAnyException();
+            assertThatCode(GameNumber::new).doesNotThrowAnyException();
         }
     }
 
